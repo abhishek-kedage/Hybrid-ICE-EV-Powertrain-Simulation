@@ -1,0 +1,13 @@
+clc;
+clear;
+load("motor_data_old.mat");
+mot.efficiency.RPM = mot.efficiency.RPM(24:end);
+mot.efficiency.elec_power = 2.1*mot.efficiency.elec_power(24:end,:);
+mot.efficiency.Torque = 2.1*mot.efficiency.Torque;
+mot.max_torque.RPM = mot.max_torque.RPM(15:29);
+mot.max_torque.Torque = 2.5*mot.max_torque.Torque(15:29);
+mot.min_torque.Torque = 2.5*mot.min_torque.Torque(15:29);
+mot.min_torque.RPM = mot.min_torque.RPM(15:29);
+mot.max_power_mot = 2.5*mot.max_power_mot;
+mot.min_power_mot = 2.5*mot.min_power_mot;
+save("motor_data_old.mat");
